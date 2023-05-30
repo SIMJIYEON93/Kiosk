@@ -23,23 +23,13 @@ public class Menu {
         Iterator<String> it = m.keySet().iterator();
         while (it.hasNext()) {
             String key = it.next();
-         //   int i;
-          //  for (i = 1; i < 5; i++) {
-           //     int sum = 0;
-            //    sum += i;
-
-            // System.out.println(sum+"."+"\t" + key +"\t" + "|"+"\t"  + m.get(key));
             System.out.println( key +"\t" + "|"+"\t"  + m.get(key));
-        }
-        }
-    //}
+        }  }
+
 
     public Menu(String name, String details){
         this.name=name;
         this.details=details;
-    }
-    void see(){
-        System.out.println("");
     }
 
 }
