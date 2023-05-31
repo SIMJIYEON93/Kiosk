@@ -1,45 +1,49 @@
 package burger_kiosk;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
-public class Food extends Menu{
-    String name; //음식이름
-    String details; //음식설명
-    private double price; //음식가격
+public class Food extends Menu {
+    private String price; //음식가격
 
-    public Food(String name, String detail, double price){
-        super(name, detail);
+    public Food(){
+    }
+    public Food(String name, String details, String price){
+        super(name, details);
         this.price=price;
     }
+    @Override
+    public void put(){
+        List<Food> fe = new ArrayList<>();
+        fe.add(new Food("ShackBurger","토마토, 양상추, 쉑소스가 토핑된 치즈버거","W 6.9"));
+        fe.add(new Food("SmokeShack","베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거","W 8.9"));
+        fe.add(new Food("Shroom Burger","몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거","W 9.4"));
+        fe.add(new Food("Cheeseburger","포테이토 번과 비프패티, 치즈가 토핑된 치즈버거","W 6.9"));
+        fe.add(new Food("Hamburger","비프패티를 기반으로 야채가 들어간 기본버거","W 5.4"));
 
-    static void put(){
-        Map<String, String> m = new HashMap<>();
-        m.put("1. cheeseburgers","| W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
-        m.put("2. chickenburgers","| W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
-        m.put("3. burgers","| W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
-        m.put("4. smokeburgers","| W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
-
-        Iterator<String> it = m.keySet().iterator();
-        while (it.hasNext()) {
-            String key = it.next();
-            System.out.println( key + "\t"  + m.get(key));
-        }
+        List<Food> fed = new ArrayList<>();
+        fed.add(new Food("Custard IceCream","커스터드 맛 아이스크림","W 6.9"));
+        fed.add(new Food("Chocolate IceCream","초콜릿 맛 아이스크림","W 8.9"));
+        fed.add(new Food("Lemon IceCream","레몬 맛 아이스크림","W 9.4"));
+        fed.add(new Food("Vanllia IceCream","바닐라 맛 아이스크림","W 6.9"));
+        fed.add(new Food("Strawberry IceCream","딸기 맛 아이스크림","W 5.4"));
     }
-    static void put1(){
-        Map<String, String> a = new HashMap<>();
-        a.put("1. coke","앵거스 비프 통살을 다져만든 버거");
-        a.put("2. lemoncoke","| W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
-        a.put("3. gingercoke","| W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
-        a.put("4. zerocoke","| W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
-
-        Iterator<String> its = a.keySet().iterator();
-        while (its.hasNext()) {
-            String key = its.next();
-            System.out.println( key + "\t"+a.get(key));
-        }
-
+    public void display(){
+        System.out.println(" \"SHAKESHACK BURGER 에 오신걸 환영합니다.\"");
+        System.out.println("아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.");
+        System.out.println("");
+        System.out.println("[ Burgers MENU ]");
+}
+    @Override
+    public  void next(){
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        if("Burgers".equals(a)){
+            System.out.println();}
+        else if("Forzen Custard".equals(a)){
+            System.out.println();}
+        else if("Drinks".equals(a)){
+            System.out.println();}
+        else if("Beer".equals(a)){
+            System.out.println();}
     }
-
 }
